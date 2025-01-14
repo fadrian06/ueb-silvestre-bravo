@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat Variable', sans-serif;
   display: grid;
   place-content: center;
   min-height: 100vh;
