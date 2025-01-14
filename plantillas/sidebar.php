@@ -17,8 +17,6 @@
       </div>
     </div>
 
-
-
     <!-- SidebarSearch Form -->
     <div class="form-inline">
       <div class="input-group" data-widget="sidebar-search">
@@ -31,22 +29,16 @@
       </div>
     </div>
 
-
-
     <!-- Sidebar Menu -->
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
-
         <li class="nav-item ">
-
           <a href="/sistema/inicio.php" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Inicio
-
             </p>
           </a>
         </li>
@@ -73,27 +65,17 @@
                 <p>Registrar Usuario</p>
               </a>
             </li>
-
-
-
-
           </ul>
         </li>
-
 
         <li class="nav-item">
           <a href="/sistema/Estudiante/estudiantes x.php" class="nav-link">
             <i class="nav-icon fas fa-graduation-cap"></i>
             <p>
               Estudiantes
-
             </p>
           </a>
         </li>
-        </li>
-
-
-
 
         <li class="nav-item">
           <a href="/sistema/Representante/representante x.php" class="nav-link">
@@ -102,7 +84,6 @@
               Representante
             </p>
           </a>
-        </li>
         </li>
 
         <li class="nav-item">
@@ -113,10 +94,6 @@
             </p>
           </a>
         </li>
-        </li>
-
-
-
 
         <li class="nav-item">
           <a href="/sistema/año_seccion x.php" class="nav-link">
@@ -125,7 +102,6 @@
               Años y Secciones
             </p>
           </a>
-        </li>
         </li>
 
         <li class="nav-item">
@@ -136,7 +112,6 @@
             </p>
           </a>
         </li>
-        </li>
 
         <li class="nav-item">
           <a href="/sistema/materias x.php" class="nav-link">
@@ -145,7 +120,6 @@
               Materias
             </p>
           </a>
-        </li>
         </li>
 
         <li class="nav-item">
@@ -156,15 +130,7 @@
             </p>
           </a>
         </li>
-
-        </li>
-        </li>
-
-
       </ul>
     </nav>
-
-    <!-- /.sidebar-menu -->
   </div>
-  <!-- /.sidebar -->
 </aside>
