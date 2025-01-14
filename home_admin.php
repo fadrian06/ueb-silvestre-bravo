@@ -1,18 +1,12 @@
-<?php session_start();  ?>
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <?php include "plantillas/head.php" ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-
-    <!-- Preloader -->
-
-    <!-- Navbar -->
     <?php include "plantillas/navbar.php" ?>
-    <!-- /.navbar -->
-
-    <!-- Main Sidebar Container -->
     <?php include "plantillas/sidebar.php" ?>
 
     <!-- Content Wrapper. Contains page content -->
@@ -23,17 +17,16 @@
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0">Dashboard</h1>
-            </div><!-- /.col -->
+            </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item active">Dashboard v1</li>
               </ol>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- /.content-header -->
 
       <!-- Main content -->
       <section class="content">
@@ -45,7 +38,6 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3>150</h3>
-
                   <p>New Orders</p>
                 </div>
                 <div class="icon">
@@ -54,13 +46,12 @@
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <!-- ./col -->
+
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-success">
                 <div class="inner">
                   <h3>53<sup style="font-size: 20px">%</sup></h3>
-
                   <p>Bounce Rate</p>
                 </div>
                 <div class="icon">
@@ -69,13 +60,12 @@
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <!-- ./col -->
+
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3>44</h3>
-
                   <p>User Registrations</p>
                 </div>
                 <div class="icon">
@@ -84,13 +74,12 @@
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <!-- ./col -->
+
             <div class="col-lg-3 col-6">
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
                   <h3>65</h3>
-
                   <p>Unique Visitors</p>
                 </div>
                 <div class="icon">
@@ -99,9 +88,8 @@
                 <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
-            <!-- ./col -->
           </div>
-          <!-- /.row -->
+
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
@@ -123,7 +111,7 @@
                       </li>
                     </ul>
                   </div>
-                </div><!-- /.card-header -->
+                </div>
                 <div class="card-body">
                   <div class="tab-content p-0">
                     <!-- Morris chart - Sales -->
@@ -135,9 +123,8 @@
                       <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
                     </div>
                   </div>
-                </div><!-- /.card-body -->
+                </div>
               </div>
-              <!-- /.card -->
 
               <!-- DIRECT CHAT -->
               <div class="card direct-chat direct-chat-primary">
@@ -157,7 +144,6 @@
                     </button>
                   </div>
                 </div>
-                <!-- /.card-header -->
                 <div class="card-body">
                   <!-- Conversations are loaded here -->
                   <div class="direct-chat-messages">
@@ -167,15 +153,11 @@
                         <span class="direct-chat-name float-left">Alexander Pierce</span>
                         <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                       </div>
-                      <!-- /.direct-chat-infos -->
                       <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
                       <div class="direct-chat-text">
                         Is this template really for free? That's unbelievable!
                       </div>
-                      <!-- /.direct-chat-text -->
                     </div>
-                    <!-- /.direct-chat-msg -->
 
                     <!-- Message to the right -->
                     <div class="direct-chat-msg right">
@@ -183,15 +165,11 @@
                         <span class="direct-chat-name float-right">Sarah Bullock</span>
                         <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                       </div>
-                      <!-- /.direct-chat-infos -->
                       <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
                       <div class="direct-chat-text">
                         You better believe it!
                       </div>
-                      <!-- /.direct-chat-text -->
                     </div>
-                    <!-- /.direct-chat-msg -->
 
                     <!-- Message. Default to the left -->
                     <div class="direct-chat-msg">
@@ -199,15 +177,11 @@
                         <span class="direct-chat-name float-left">Alexander Pierce</span>
                         <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                       </div>
-                      <!-- /.direct-chat-infos -->
                       <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
                       <div class="direct-chat-text">
                         Working with AdminLTE on a great new app! Wanna join?
                       </div>
-                      <!-- /.direct-chat-text -->
                     </div>
-                    <!-- /.direct-chat-msg -->
 
                     <!-- Message to the right -->
                     <div class="direct-chat-msg right">
@@ -215,18 +189,12 @@
                         <span class="direct-chat-name float-right">Sarah Bullock</span>
                         <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                       </div>
-                      <!-- /.direct-chat-infos -->
                       <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
-                      <!-- /.direct-chat-img -->
                       <div class="direct-chat-text">
                         I would love to.
                       </div>
-                      <!-- /.direct-chat-text -->
                     </div>
-                    <!-- /.direct-chat-msg -->
-
                   </div>
-                  <!--/.direct-chat-messages-->
 
                   <!-- Contacts are loaded here -->
                   <div class="direct-chat-contacts">
@@ -242,10 +210,10 @@
                             </span>
                             <span class="contacts-list-msg">How have you been? I was...</span>
                           </div>
-                          <!-- /.contacts-list-info -->
                         </a>
                       </li>
                       <!-- End Contact Item -->
+
                       <li>
                         <a href="#">
                           <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
@@ -257,10 +225,10 @@
                             </span>
                             <span class="contacts-list-msg">I will be waiting for...</span>
                           </div>
-                          <!-- /.contacts-list-info -->
                         </a>
                       </li>
                       <!-- End Contact Item -->
+
                       <li>
                         <a href="#">
                           <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
@@ -272,10 +240,10 @@
                             </span>
                             <span class="contacts-list-msg">I'll call you back at...</span>
                           </div>
-                          <!-- /.contacts-list-info -->
                         </a>
                       </li>
                       <!-- End Contact Item -->
+
                       <li>
                         <a href="#">
                           <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
@@ -287,10 +255,10 @@
                             </span>
                             <span class="contacts-list-msg">Where is your new...</span>
                           </div>
-                          <!-- /.contacts-list-info -->
                         </a>
                       </li>
                       <!-- End Contact Item -->
+
                       <li>
                         <a href="#">
                           <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
@@ -302,9 +270,9 @@
                             </span>
                             <span class="contacts-list-msg">Can I take a look at...</span>
                           </div>
-                          <!-- /.contacts-list-info -->
                         </a>
                       </li>
+
                       <!-- End Contact Item -->
                       <li>
                         <a href="#">
@@ -317,16 +285,12 @@
                             </span>
                             <span class="contacts-list-msg">Never mind I found...</span>
                           </div>
-                          <!-- /.contacts-list-info -->
                         </a>
                       </li>
                       <!-- End Contact Item -->
                     </ul>
-                    <!-- /.contacts-list -->
                   </div>
-                  <!-- /.direct-chat-pane -->
                 </div>
-                <!-- /.card-body -->
                 <div class="card-footer">
                   <form action="#" method="post">
                     <div class="input-group">
@@ -337,9 +301,7 @@
                     </div>
                   </form>
                 </div>
-                <!-- /.card-footer-->
               </div>
-              <!--/.direct-chat -->
 
               <!-- TO DO List -->
               <div class="card">
@@ -359,7 +321,6 @@
                     </ul>
                   </div>
                 </div>
-                <!-- /.card-header -->
                 <div class="card-body">
                   <ul class="todo-list" data-widget="todo-list">
                     <li>
@@ -465,14 +426,12 @@
                     </li>
                   </ul>
                 </div>
-                <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
                 </div>
               </div>
-              <!-- /.card -->
             </section>
-            <!-- /.Left col -->
+
             <!-- right col (We are only adding the ID to make the widgets sortable)-->
             <section class="col-lg-5 connectedSortable">
 
@@ -492,34 +451,27 @@
                       <i class="fas fa-minus"></i>
                     </button>
                   </div>
-                  <!-- /.card-tools -->
                 </div>
                 <div class="card-body">
                   <div id="world-map" style="height: 250px; width: 100%;"></div>
                 </div>
-                <!-- /.card-body-->
                 <div class="card-footer bg-transparent">
                   <div class="row">
                     <div class="col-4 text-center">
                       <div id="sparkline-1"></div>
                       <div class="text-white">Visitors</div>
                     </div>
-                    <!-- ./col -->
                     <div class="col-4 text-center">
                       <div id="sparkline-2"></div>
                       <div class="text-white">Online</div>
                     </div>
-                    <!-- ./col -->
                     <div class="col-4 text-center">
                       <div id="sparkline-3"></div>
                       <div class="text-white">Sales</div>
                     </div>
-                    <!-- ./col -->
                   </div>
-                  <!-- /.row -->
                 </div>
               </div>
-              <!-- /.card -->
 
               <!-- solid sales graph -->
               <div class="card bg-gradient-info">
@@ -541,7 +493,6 @@
                 <div class="card-body">
                   <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
-                <!-- /.card-body -->
                 <div class="card-footer bg-transparent">
                   <div class="row">
                     <div class="col-4 text-center">
@@ -550,27 +501,21 @@
 
                       <div class="text-white">Mail-Orders</div>
                     </div>
-                    <!-- ./col -->
                     <div class="col-4 text-center">
                       <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                         data-fgColor="#39CCCC">
 
                       <div class="text-white">Online</div>
                     </div>
-                    <!-- ./col -->
                     <div class="col-4 text-center">
                       <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                         data-fgColor="#39CCCC">
 
                       <div class="text-white">In-Store</div>
                     </div>
-                    <!-- ./col -->
                   </div>
-                  <!-- /.row -->
                 </div>
-                <!-- /.card-footer -->
               </div>
-              <!-- /.card -->
 
               <!-- Calendar -->
               <div class="card bg-gradient-success">
@@ -601,25 +546,17 @@
                       <i class="fas fa-times"></i>
                     </button>
                   </div>
-                  <!-- /. tools -->
                 </div>
-                <!-- /.card-header -->
                 <div class="card-body pt-0">
                   <!--The calendar -->
                   <div id="calendar" style="width: 100%"></div>
                 </div>
-                <!-- /.card-body -->
               </div>
-              <!-- /.card -->
             </section>
-            <!-- right col -->
           </div>
-          <!-- /.row (main row) -->
-        </div><!-- /.container-fluid -->
+        </div>
       </section>
-      <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
     <footer class="main-footer">
       <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
       All rights reserved.
@@ -632,9 +569,7 @@
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
     </aside>
-    <!-- /.control-sidebar -->
   </div>
-  <!-- ./wrapper -->
   <?php include "plantillas/javascripts.php" ?>
 
 </body>
