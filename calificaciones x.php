@@ -3,7 +3,7 @@
 session_start();
 include 'modelos/Db.php';
 
-$modelo = new Connection();
+$modelo = new Connection;
 $data = $modelo->getAll();
 
 ?>
