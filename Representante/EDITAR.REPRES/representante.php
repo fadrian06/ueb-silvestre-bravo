@@ -1,123 +1,117 @@
 <?php
 
-include '../../modelos/Db.php';
+require_once '../../modelos/Db.php';
 
-    class ObtenerRepresentante{
-        function editarRepresentante(){
-            $id= $_GET['id'];
-            $model = new Connection();
-            $con = $model->conexion();
-            $data = $con->query("SELECT * FROM representante WHERE Id_Repres=$id");
-            $data = $data->fetch(PDO::FETCH_ASSOC);
-            return $data;
-        }
-    }
-    $representante = new ObtenerRepresentante();
-    $representante = $representante->editarRepresentante();
+class ObtenerRepresentante
+{
+  /** @return array{
+   *   Id_Repres: int,
+   *   Ced_Repres: int,
+   *   Apell_Repres: string,
+   *   Nom_Repres: string,
+   *   Fec_Nac: string,
+   *   Luga_Nac: string,
+   *   Nacionalidad: string,
+   *   Dir_Exac: string,
+   *   Afin_con_Est: string,
+   *   Email_Repres: string,
+   *   Telf_Repres: int
+   * } */
+  function editarRepresentante()
+  {
+    $id = $_GET['id'];
+    $model = new Connection;
+    $con = $model->conexion();
+    $data = $con->query("SELECT * FROM representante WHERE Id_Repres=$id");
+    $data = $data->fetch(PDO::FETCH_ASSOC);
+
+    return $data;
+  }
+}
+
+$representante = new ObtenerRepresentante;
+$representante = $representante->editarRepresentante();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-    <?php include '../../plantillas/head.php' ?>
-    
-    
-    
-    
-    <body>
-        
-        <?php include '../../plantillas/navbar.php' ?>
-        <?php include "../../plantillas/sidebar.php" ?>
+<?php include '../../plantillas/head.php' ?>
 
-        <div class="content-wrapper">
-            <section class="content">
-                <div class="container">
-                    <div class="form-content">
-            
-            
-                        <form class=from action="editarRepresentante.php" method="POST">
-            
-                            <h1>Editar de Representante</h1>
-                            <div class="input-greop">
-            
-            
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users"> Cedula:</i>
-                                    <input class="field" name="Ced_Repres" placeholder="" value="<?= $representante['Ced_Repres'] ?>" type="text" required> <br />
-                                </div>
+<body>
+  <?php include '../../plantillas/navbar.php' ?>
+  <?php include "../../plantillas/sidebar.php" ?>
 
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Apellidos:</i>
-                                    <input class="field" name="Apell_Repres" placeholder="" value="<?= $representante['Apell_Repres'] ?>" type="text" required> <br />
-                                </div>
+  <div class="content-wrapper">
+    <section class="content">
+      <div class="container">
+        <div class="form-content">
+          <form class=from action="editarRepresentante.php" method="POST">
+            <h1>Editar de Representante</h1>
+            <div class="input-greop">
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users"> Cedula:</i>
+                <input class="field" name="Ced_Repres" placeholder="" value="<?= $representante['Ced_Repres'] ?>" type="text" required> <br />
+              </div>
 
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Nombre:</i>
-                                    <input class="field" name="Nom_Repres" placeholder="" value="<?= $representante['Nom_Repres'] ?>" type="text" required> <br />
-                                </div>
-            
-            
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Fecha de Nacimiento:</i>
-                                    <input class="field" name="Fec_Nac" placeholder="" value="<?= $representante['Fec_Nac'] ?>" type="text" required> <br />
-                                </div>
-                                
-            
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Lugar de Nacimiento:</i>
-                                    <input class="field" name="Luga_Nac" placeholder="" value="<?= $representante['Luga_Nac'] ?>" type="text" required> <br />
-                                </div>
-            
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Nacionalidad:</i>
-                                    <input class="field" name="Nacionalidad" value="<?= $representante['Nacionalidad'] ?>" type="text" required> <br />
-                                </div>
-            
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Dirección Exacta:</i>
-                                    <input class="field" name="Dir_Exac" value="<?= $representante['Dir_Exac'] ?>" type="text" required> <br />
-                                </div>
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Apellidos:</i>
+                <input class="field" name="Apell_Repres" placeholder="" value="<?= $representante['Apell_Repres'] ?>" type="text" required> <br />
+              </div>
 
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Afinidad con el Estudiante:</i>
-                                    <input class="field" name="Afin_con_Est" value="<?= $representante['Afin_con_Est'] ?>" type="text" required> <br />
-                                </div>
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Nombre:</i>
+                <input class="field" name="Nom_Repres" placeholder="" value="<?= $representante['Nom_Repres'] ?>" type="text" required> <br />
+              </div>
 
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Email:</i>
-                                    <input class="field" name="Email_Repres" value="<?= $representante['Email_Repres'] ?>" type="text" required> <br />
-                                </div>
 
-                                <div class="input-field" id="nameInput">
-                                    <i class="nav-icon fas fa-users">Telefono:</i>
-                                    <input class="field" name="Telf_Repres" value="<?= $representante['Telf_Repres'] ?>" type="text" required> <br />
-                                </div>
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Fecha de Nacimiento:</i>
+                <input class="field" name="Fec_Nac" placeholder="" value="<?= $representante['Fec_Nac'] ?>" type="text" required> <br />
+              </div>
 
-                                        
-            
-            
-                                <p class="center-content">
-                                    <input type="submit" class="btn btn-green" value="Actualizar">
-                                </p>
-                                <p> <a href="../profesor x.php">Salir </a></p>
-            
-            
-                            </div>
-            
-            
-            
-                        </form>
-            
-            
-                    </div>
-            
-            
-                </div>
 
-            </section>
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Lugar de Nacimiento:</i>
+                <input class="field" name="Luga_Nac" placeholder="" value="<?= $representante['Luga_Nac'] ?>" type="text" required> <br />
+              </div>
+
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Nacionalidad:</i>
+                <input class="field" name="Nacionalidad" value="<?= $representante['Nacionalidad'] ?>" type="text" required> <br />
+              </div>
+
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Dirección Exacta:</i>
+                <input class="field" name="Dir_Exac" value="<?= $representante['Dir_Exac'] ?>" type="text" required> <br />
+              </div>
+
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Afinidad con el Estudiante:</i>
+                <input class="field" name="Afin_con_Est" value="<?= $representante['Afin_con_Est'] ?>" type="text" required> <br />
+              </div>
+
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Email:</i>
+                <input class="field" name="Email_Repres" value="<?= $representante['Email_Repres'] ?>" type="text" required> <br />
+              </div>
+
+              <div class="input-field" id="nameInput">
+                <i class="nav-icon fas fa-users">Telefono:</i>
+                <input class="field" name="Telf_Repres" value="<?= $representante['Telf_Repres'] ?>" type="text" required> <br />
+              </div>
+
+              <p class="center-content">
+                <input type="submit" class="btn btn-green" value="Actualizar">
+              </p>
+
+              <p> <a href="../profesor x.php">Salir </a></p>
+            </div>
+          </form>
         </div>
-
-
-
+      </div>
+    </section>
+  </div>
 </body>
 
 </html>
