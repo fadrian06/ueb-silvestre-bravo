@@ -10,6 +10,7 @@
     <div class="form-information">
       <div class="form-information-childs">
         <h1>Iniciar sesión</h1>
+        {{-- <x-ingreso-iconos /> --}}
         <p>U.E.B."Silvestre A. Bravo L."</p>
 
         <form class="form" method="POST" action="./app/UserController.php">
