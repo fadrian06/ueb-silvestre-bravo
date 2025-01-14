@@ -18,6 +18,18 @@ class Connection{
               die($e->getMessage());
           }
       }
+
+      /**
+       * @return array<int, array{
+       *   Id_usuario: int,
+       *   Cedula: int,
+       *   Nombres: string,
+       *   Apellidos: string,
+       *   Usuario: string,
+       *   Clave: string,
+       *   Privilegio: string
+       * }>
+       */
       function getAll(){
         $con = $this->conexion();
         $query = $con->query("SELECT * FROM $this->table");
