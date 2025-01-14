@@ -79,6 +79,7 @@ class Connection
   }
 }
 
+/** @deprecated */
 class Database
 {
   // SE crean variables privadas que me permitira hacer la conexion con la base de datos

@@ -2,12 +2,12 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<?php include "plantillas/head.php" ?>
+<?php include 'plantillas/head.php' ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-    <?php include "plantillas/navbar.php" ?>
-    <?php include "plantillas/sidebar.php" ?>
+    <?php include 'plantillas/navbar.php' ?>
+    <?php include 'plantillas/sidebar.php' ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -564,13 +564,8 @@
         <b>Version</b> 3.2.0
       </div>
     </footer>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
   </div>
-  <?php include "plantillas/javascripts.php" ?>
+  <?php include 'plantillas/javascripts.php' ?>
 
 </body>
 

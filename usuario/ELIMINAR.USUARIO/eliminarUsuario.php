@@ -1,21 +1,10 @@
 <?php
 
-require_once "../../modelos/Db.php";
+use SABL\Modelos\Usuario;
 
-class usuarioEliminar
-{
-  public function eliminarUsuario()
-  {
-    $c = new Connection();
-    $conexion = $c->conexion();
-    $id = $_GET["id"];
-    $sql = "DELETE FROM seguridad where Id_usuario =$id";
-    $conexion->query($sql);
-  }
-}
+require_once __DIR__ . "/../../vendor/autoload.php";
 
-$usuario = new usuarioEliminar;
-$usuario->eliminarUsuario();
+Usuario::eliminarPorId($_GET['id']);
 
 echo '<script>alert (" Usuario eliminado con Exito ");</script>';
 echo '<script>document.location.href="../../usuario x.php" </script>';

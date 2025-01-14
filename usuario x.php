@@ -1,11 +1,9 @@
 <?php
 
-session_start();
-include 'modelos/Db.php';
+use SABL\Modelos\Usuario;
 
-$modelo = new Connection();
-$modelo->table = 'seguridad';
-$data = $modelo->getAll();
+session_start();
+require_once __DIR__ . '/vendor/autoload.php';
 
 ?>
 
@@ -46,7 +44,7 @@ $data = $modelo->getAll();
 
 
             <div class="card-boby ">
-              <div style="text-align:center;">
+              <div class="table-responsive">
                 <table class="table table-bordered table-hover  ">
                   <thead>
                     <tr>
@@ -60,7 +58,7 @@ $data = $modelo->getAll();
                   </thead>
                   <tbody>
 
-                    <?php foreach ($data as $usuario): ?>
+                    <?php foreach (Usuario::todos() as $usuario): ?>
                       <tr>
                         <td><?= $usuario['Id_usuario'] ?></td>
                         <td><?= $usuario['Cedula'] ?></td>
@@ -91,11 +89,6 @@ $data = $modelo->getAll();
       </section>
     </div>
   </div>
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
 
   <?php include "plantillas/javascripts.php" ?>
 

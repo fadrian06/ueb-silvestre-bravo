@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-include 'modelos/Db.php';
-
-$modelo = new Connection;
-$data = $modelo->getAll();
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <?php include 'plantillas/head.php' ?>
@@ -31,53 +21,10 @@ $data = $modelo->getAll();
       </div>
 
       <!-- Main content -->
-      <section class="content">
-        <a class="btn btn-info my-2" href="  "> Registro </a>
-        <div class="col-12 table-responsive">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Cédula</th>
-                <th>Usuario</th>
-                <th>Privilegio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($data as $usuario): ?>
-                <tr>
-                  <td><?= $usuario['Id_usuario'] ?></td>
-                  <td><?= $usuario['Nombres'] ?></td>
-                  <td><?= $usuario['Apellidos'] ?></td>
-                  <td><?= $usuario['Cedula'] ?></td>
-                  <td><?= $usuario['Usuario'] ?></td>
-                  <td><?= $usuario['Privilegio'] ?></td>
-                  <td class="btn-group">
-                    <a
-                      href="notas_estudientes.php?id=<?= $usuario['Id_usuario'] ?>"
-                      class="btn btn-primary">
-                      Editar
-                    </a>
-                    <a
-                      href="notas_estudientes.php?id=<?= $usuario['Id_usuario'] ?>"
-                      class="btn btn-danger">
-                      Eliminar
-                    </a>
-                  </td>
-                </tr>
-              <?php endforeach ?>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <section class="content"></section>
     </div>
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
   </div>
+
   <?php include 'plantillas/javascripts.php' ?>
 </body>
 

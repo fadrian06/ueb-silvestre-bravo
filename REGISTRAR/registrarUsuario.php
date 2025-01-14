@@ -1,8 +1,9 @@
 <?php
 
-require_once "Usuarios.php";
+use SABL\Modelos\Usuario;
 
-$obj = new usuarios;
+require_once __DIR__ . '/../vendor/autoload.php';
+
 $pass = sha1($_POST['Clave']);
 
 $datos = [
@@ -14,6 +15,6 @@ $datos = [
   $_POST['Privilegio']
 ];
 
-echo $obj->registroUsuario($datos);
+Usuario::insertar($datos);
 echo '<script>alert (" Usuario Registrado con Exito ");</script>';
 echo '<script>document.location.href="usuario.php?p=test" </script>';

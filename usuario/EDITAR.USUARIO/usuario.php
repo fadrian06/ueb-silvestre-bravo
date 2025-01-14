@@ -1,34 +1,10 @@
 <?php
 
-require_once '../../modelos/Db.php';
+use SABL\Modelos\Usuario;
 
-class ObtenerUsuario
-{
-  /**
-   * @return array{
-   *   Id_usuario: int,
-   *   Cedula: int,
-   *   Nombres: string,
-   *   Apellidos: string,
-   *   Usuario: string,
-   *   Clave: string,
-   *   Privilegio: string
-   * }
-   */
-  function editarUsuario()
-  {
-    $id = $_GET['id'];
-    $model = new Connection;
-    $con = $model->conexion();
-    $data = $con->query("SELECT * FROM usuario WHERE Id_usuario=$id");
-    $data = $data->fetch(PDO::FETCH_ASSOC);
+require_once __DIR__ . '/../../vendor/autoload.php';
 
-    return $data;
-  }
-}
-
-$representante = new ObtenerUsuario;
-$representante = $representante->editarUsuario();
+$representante = Usuario::obtenerPorId($_GET['id']);
 
 ?>
 

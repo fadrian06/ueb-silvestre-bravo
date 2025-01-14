@@ -28,13 +28,9 @@
         <h1></h1>
       </section>
     </div>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
   </div>
-  <?php include "plantillas/javascripts.php" ?>
+
+  <?php include 'plantillas/javascripts.php' ?>
 </body>
 
 </html>
