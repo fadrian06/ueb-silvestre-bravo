@@ -1,34 +1,20 @@
 <?php
 
+use SABL\Modelos\Estudiante;
+
 session_start();
-include '../modelos/Db.php';
-
-$modelo = new Connection;
-$modelo->table = 'estudiante';
-
-/** @var array<int, array{
- *   Id_Est: int,
- *   Ced_Est: string,
- *   Apell_Est: string,
- *   Nom_Est: string,
- *   Fec_Nac: string,
- *   Luga_Nac: string,
- *   Nacionalidad: string,
- *   Dir_Exac: string,
- *   Id_Repres: int
- * }> */
-$data = $modelo->getAll();
+require_once __DIR__ . '/../vendor/autoload.php';
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-<?php include "../plantillas/head.php" ?>
+<?php include '../plantillas/head.php' ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-    <?php include "../plantillas/navbar.php" ?>
-    <?php include "../plantillas/sidebar.php" ?>
+    <?php include '../plantillas/navbar.php' ?>
+    <?php include '../plantillas/sidebar.php' ?>
 
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -71,7 +57,7 @@ $data = $modelo->getAll();
                     </tr>
                   </thead>
                   <tbody>
-                    <?php foreach ($data as $estudiante): ?>
+                    <?php foreach (Estudiante::todos() as $estudiante): ?>
                       <tr>
                         <td><?= $estudiante['Id_Est'] ?></td>
                         <td><?= $estudiante['Ced_Est'] ?></td>
@@ -111,11 +97,7 @@ $data = $modelo->getAll();
     </div>
   </div>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <?php include "../plantillas/javascripts.php" ?>
+  <?php include '../plantillas/javascripts.php' ?>
 </body>
 
 </html>

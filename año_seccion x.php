@@ -15,7 +15,6 @@
             <div class="col-sm-6">
               <h1 class="m-0">Años y Secciones</h1>
             </div>
-
           </div>
         </div>
       </div>
