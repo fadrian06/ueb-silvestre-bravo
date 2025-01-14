@@ -55,16 +55,16 @@ $data = $modelo->getAll();
                   <td><?= $usuario['Usuario'] ?></td>
                   <td><?= $usuario['Privilegio'] ?></td>
                   <td class="btn-group">
-                      <a
-                        href="notas_estudientes.php?id=<?= $usuario['Id_usuario'] ?>"
-                        class="btn btn-primary">
-                        Editar
-                      </a>
-                      <a
-                        href="notas_estudientes.php?id=<?= $usuario['Id_usuario'] ?>"
-                        class="btn btn-danger">
-                        Eliminar
-                      </a>
+                    <a
+                      href="notas_estudientes.php?id=<?= $usuario['Id_usuario'] ?>"
+                      class="btn btn-primary">
+                      Editar
+                    </a>
+                    <a
+                      href="notas_estudientes.php?id=<?= $usuario['Id_usuario'] ?>"
+                      class="btn btn-danger">
+                      Eliminar
+                    </a>
                   </td>
                 </tr>
               <?php endforeach ?>
