@@ -1,15 +1,25 @@
-<?php session_start();
+<?php
 
+session_start();
 include '../modelos/Db.php';
 
-$modelo = new Connection();
-/* $usuario = [
-    "Cédula"=> "30680625",
-    "Nombres"=> "Chiki",
-] */
-$data = $modelo->table = "profesor";
-$data = $modelo->getAll();
+$modelo = new Connection;
+$data = $modelo->table = 'profesor';
 
+/** @var array<int, array{
+ *   Id_Prof: int,
+ *   Ced_Prof: string,
+ *   Nom_Prof: string,
+ *   Apell_Prof: string,
+ *   Fec_Nac: string,
+ *   Codigo_Carg_Prof: string,
+ *   Codigo_Domina: string,
+ *   Fec_Incres_T_Minis: string,
+ *   Email_Prof: string,
+ *   Telf_Prof: int,
+ *   Fec_Registro: string
+ * }> */
+$data = $modelo->getAll();
 
 ?>
 
@@ -19,14 +29,7 @@ $data = $modelo->getAll();
 
 <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
-
-    <!-- Preloader -->
-
-    <!-- Navbar -->
     <?php include "../plantillas/navbar.php" ?>
-    <!-- /.navbar -->
-
-    <!-- Main Sidebar Container -->
     <?php include "../plantillas/sidebar.php" ?>
 
     <div class="content-wrapper">
@@ -37,17 +40,14 @@ $data = $modelo->getAll();
           <div class="row mb-2">
             <div class="col-sm-6">
               <h1 class="m-0">Listado de Profesores</h1>
-            </div><!-- /.col -->
+            </div>
 
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+          </div>
+        </div>
       </div>
-      <!-- /.content-header -->
 
       <!-- Main content -->
       <section class="content">
-
-        <!-- Main content -->
         <div class="col-md-12 table-responsive">
           <div class="card card-outline card-primary">
             <div class="card-header">
@@ -57,11 +57,10 @@ $data = $modelo->getAll();
               </div>
             </div>
 
-
             <div class="card-boby ">
-              <div style="text-align:center;">
+              <div class="table-responsive">
                 <table class="table table-bordered table-hover  ">
-                  <thead>
+                  <thead class="text-nowrap">
                     <tr>
                       <th>Nº</th>
                       <th>Cédula</th>
@@ -74,64 +73,51 @@ $data = $modelo->getAll();
                       <th>Email</th>
                       <th>Telefono</th>
                       <th>Fecha de registro</th>
-                      
-                      <th>Editar</th>
-                      <th>Eliminar</th>
-
                     </tr>
-
                   </thead>
                   <tbody>
                     <?php foreach ($data as $profesor): ?>
                       <tr>
-                        <td><?= $profesor["Id_Prof"] ?></td>
-                        <td><?= $profesor["Ced_Prof"] ?></td>
-                        <td><?= $profesor["Nom_Prof"] ?></td>
-                        <td><?= $profesor["Apell_Prof"] ?></td>
-                        <td><?= $profesor["Fec_Nac"] ?></td>
-                        <td><?= $profesor["Codigo_Carg_Prof"] ?></td>
-                        <td><?= $profesor["Codigo_Domina"] ?></td>
-                        <td><?= $profesor["Fec_Incres_T_Minis"] ?></td>
-                        <td><?= $profesor["Email_Prof"] ?></td>
-                        <td><?= $profesor["Telf_Prof"] ?></td>
-                        <td><?= $profesor["Fec_Registro"] ?></td>
-
-                        <td>
-                          <a href="../Profesor/EDITAR.PROF/profesor.php?id=<?php echo $profesor["Id_Prof"] ?>" class="btn btn-primary">
+                        <td><?= $profesor['Id_Prof'] ?></td>
+                        <td><?= $profesor['Ced_Prof'] ?></td>
+                        <td><?= $profesor['Nom_Prof'] ?></td>
+                        <td><?= $profesor['Apell_Prof'] ?></td>
+                        <td><?= $profesor['Fec_Nac'] ?></td>
+                        <td><?= $profesor['Codigo_Carg_Prof'] ?></td>
+                        <td><?= $profesor['Codigo_Domina'] ?></td>
+                        <td><?= $profesor['Fec_Incres_T_Minis'] ?></td>
+                        <td><?= $profesor['Email_Prof'] ?></td>
+                        <td><?= $profesor['Telf_Prof'] ?></td>
+                        <td><?= $profesor['Fec_Registro'] ?></td>
+                        <td class="btn-group">
+                          <a
+                            href="../Profesor/EDITAR.PROF/profesor.php?id=<?= $profesor['Id_Prof'] ?>"
+                            class="btn btn-primary">
                             Editar
                           </a>
-                        </td>
-
-                        <td>
-                          <a href="../Profesor/ELIMINAR.PROF/eliminarProfesor.php?id=<?php echo $profesor["Id_Prof"] ?>" class="btn btn-danger">
+                          <a
+                            href="../Profesor/ELIMINAR.PROF/eliminarProfesor.php?id=<?= $profesor['Id_Prof'] ?>"
+                            class="btn btn-danger">
                             Eliminar
                           </a>
                         </td>
-
-
                       </tr>
                     <?php endforeach ?>
                   </tbody>
-
-
-
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-      <!-- /.content -->
     </div>
-
-    <!-- Content Wrapper. Contains page content -->
-
-    <!-- /.content-wrapper -->
-
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
     </aside>
-
-    <!-- /.control-sidebar -->
   </div>
-  <!-- ./wrapper -->
+
   <?php include "../plantillas/javascripts.php" ?>
 
 </body>
