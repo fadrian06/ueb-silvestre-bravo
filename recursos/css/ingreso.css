@@ -93,17 +93,17 @@ button {
     color: #333;
 
     &[type='submit'] {
-      background-color: #9191bd;
-      color: white;
+      background-color: rgba(196, 18, 255, 8.2%);
       font-weight: bold;
       border: none;
       padding: .75rem 1.5rem;
       cursor: pointer;
       box-shadow: 0 2px 5px rgb(0, 0, 0, 10%);
-      transition: 300ms background-color;
+      transition: 300ms background-color, 300ms color;
 
       &:hover {
-        background-color: #7a7a9a;
+        background-color: rgba(222, 91, 255, 97%);
+        color: white;
       }
     }
   }
