@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Capsule\Manager;
 use Jenssegers\Date\Date;
+use SABL\Modelos\Usuario;
 use Symfony\Component\Dotenv\Dotenv;
 
 (new Dotenv)->load(__DIR__ . '/.env');
@@ -12,19 +13,21 @@ auth()->config('timestamps', false);
 auth()->config('db.table', 'seguridad');
 
 auth()->middleware('auth.required', function (): void {
-  if (!auth()->id()) {
+  if (auth()->id() === null) {
     response()->redirect('/ingreso');
   }
 });
 
 auth()->middleware('auth.guest', function (): void {
-  if (auth()->id()) {
+  if (auth()->id() !== null) {
     response()->redirect('/');
   }
 });
 
-auth()->config('password.verify', function (string $password, string $hash): bool {
-  return $password === $hash;
+app()->registerMiddleware('admin.only-one', function (): void {
+  if (Usuario::cantidadDeAdministradores() > 0) {
+    response()->redirect('/ingreso');
+  }
 });
 
 date_default_timezone_set($_ENV['TIMEZONE']);

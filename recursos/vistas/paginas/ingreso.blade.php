@@ -10,8 +10,14 @@
     <div class="form-information">
       <div class="form-information-childs">
         <h1>Iniciar sesión</h1>
-        {{-- <x-ingreso-iconos /> --}}
         <p>U.E.B."Silvestre A. Bravo L."</p>
+
+        @if (SABL\Modelos\Usuario::cantidadDeAdministradores() === 0)
+          <div style="margin-block: 1rem">
+            ¿No tienes cuenta?
+            <a href="./crear-cuenta">Crea una</a>
+          </div>
+        @endif
 
         <form class="form" method="post">
           <label>
@@ -23,7 +29,7 @@
             <i class="bx bx-lock"></i>
             <input
               type="password"
-              name="password"
+              name="clave"
               placeholder="Contraseña"
               required />
           </label>

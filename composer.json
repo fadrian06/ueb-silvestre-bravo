@@ -14,8 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SABL\\": "",
-      "SABL\\Modelos\\": "modelos"
+      "SABL\\": ""
     },
     "files": [
       "Blade.php"

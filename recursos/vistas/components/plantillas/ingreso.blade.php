@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Sistema Automatizado</title>
     <base href="{{ str_replace('index.php', '', $_SERVER['SCRIPT_NAME']) }}" />
+    <link rel="icon" href="./imagenes/Admin.jpg" />
     <link rel="stylesheet" href="./dist/ingreso.css" />
   </head>
 

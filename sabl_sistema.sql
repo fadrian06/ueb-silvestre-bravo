@@ -255,7 +255,6 @@ CREATE TABLE `sección` (
 --
 -- Estructura de tabla para la tabla `seguridad`
 --
-
 CREATE TABLE `seguridad` (
   `id` int(11) NOT NULL,
   `Cedula` varchar(30) NOT NULL,

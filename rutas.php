@@ -1,11 +1,17 @@
 <?php
 
-app()->group('/ingreso', ['middleware' => 'auth.guest', function (): void {
+app()->group('/ingreso', ['middleware' => 'auth.guest', static function (): void {
   app()->get('/', static fn() => Blade::renderizar('paginas.ingreso'));
+
   app()->post('/', static function (): void {
     $credenciales = request()->body();
 
-    if (!auth()->login($credenciales)) {
+    $autenticadoExitosamente = auth()->login([
+      'usuario' => $credenciales['usuario'],
+      'password' => $credenciales['clave']
+    ]);
+
+    if ($autenticadoExitosamente) {
       response()->redirect('/');
     } else {
       response()->redirect('/ingreso');
@@ -13,7 +19,31 @@ app()->group('/ingreso', ['middleware' => 'auth.guest', function (): void {
   });
 }]);
 
-app()->group('/', ['middleware' => 'auth.required', function (): void {
+app()->group('/crear-cuenta', ['middleware' => 'admin.only-one', static function (): void {
+  app()->get('/', static fn() => Blade::renderizar('paginas.crear-cuenta'));
+
+  app()->post('/', static function (): void {
+    $datos = request()->body();
+
+    auth()->register([
+      'Cedula' => $datos['cedula'],
+      'Nombres' => str_replace('  ', ' ', mb_convert_case($datos['nombres'], MB_CASE_TITLE)),
+      'Apellidos' => str_replace('  ', ' ', mb_convert_case($datos['apellidos'], MB_CASE_TITLE)),
+      'Usuario' => $datos['usuario'],
+      'password' => $datos['clave'],
+      'Privilegio' => 'A'
+    ]);
+
+    auth()->login([
+      'Usuario' => $datos['usuario'],
+      'password' => $datos['clave']
+    ]);
+
+    response()->redirect('/');
+  });
+}]);
+
+app()->group('/', ['middleware' => 'auth.required', static function (): void {
   app()->get('/', static fn() => Blade::renderizar('paginas.inicio'));
 
   app()->get('/salir', static function (): void {
