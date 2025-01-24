@@ -26,6 +26,7 @@ app()->group('/crear-cuenta', ['middleware' => 'admin.only-one', static function
     $datos = request()->body();
 
     auth()->register([
+      'id' => 1,
       'Cedula' => $datos['cedula'],
       'Nombres' => str_replace('  ', ' ', mb_convert_case($datos['nombres'], MB_CASE_TITLE)),
       'Apellidos' => str_replace('  ', ' ', mb_convert_case($datos['apellidos'], MB_CASE_TITLE)),

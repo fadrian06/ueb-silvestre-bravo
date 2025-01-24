@@ -13,13 +13,13 @@ auth()->config('timestamps', false);
 auth()->config('db.table', 'seguridad');
 
 auth()->middleware('auth.required', function (): void {
-  if (auth()->id() === null) {
+  if (!auth()->user()) {
     response()->redirect('/ingreso');
   }
 });
 
 auth()->middleware('auth.guest', function (): void {
-  if (auth()->id() !== null) {
+  if (auth()->user()) {
     response()->redirect('/');
   }
 });
