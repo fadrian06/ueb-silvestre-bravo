@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Capsule\Manager;
+use Jenssegers\Date\Date;
 use Symfony\Component\Dotenv\Dotenv;
 
 (new Dotenv)->load(__DIR__ . '/.env');
@@ -25,6 +26,9 @@ auth()->middleware('auth.guest', function (): void {
 auth()->config('password.verify', function (string $password, string $hash): bool {
   return $password === $hash;
 });
+
+date_default_timezone_set($_ENV['TIMEZONE']);
+Date::setLocale($_ENV['LOCALE']);
 
 $container = new Container;
 $container->singleton(PDO::class, static fn(): PDO => db()->connection());

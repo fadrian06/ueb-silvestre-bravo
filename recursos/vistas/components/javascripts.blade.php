@@ -25,4 +25,3 @@
 <!-- AdminLTE App -->
 <script src="./librerias/adminlte3/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="./librerias/adminlte3/dist/js/pages/dashboard.js"></script>

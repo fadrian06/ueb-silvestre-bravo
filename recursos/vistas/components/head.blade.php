@@ -25,4 +25,7 @@
   <link rel="stylesheet" href="./librerias/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="./librerias/summernote/summernote-bs4.min.css">
+
+  <link rel="stylesheet" href="./dist/inicio.css" />
+  <script defer src="./dist/inicio.js"></script>
 </head>
