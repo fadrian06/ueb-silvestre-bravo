@@ -1,5 +1,7 @@
 <?php
 
+use SABL\Modelos\Usuario;
+
 app()->group('/ingreso', ['middleware' => 'auth.guest', static function (): void {
   app()->get('/', static fn() => Blade::renderizar('paginas.ingreso'));
 
@@ -111,4 +113,33 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
 
     response()->redirect('/restaurar');
   });
+
+  app()->group('/', ['middleware' => 'only-admins', static function (): void {
+    app()->group('/usuarios', static function (): void {
+      app()->get('/', static fn() => Blade::renderizar('paginas.usuarios.listado'));
+      app()->get('/registrar', static fn() => Blade::renderizar('paginas.usuarios.registrar'));
+
+      app()->post('/', static function (): void {
+        $datos = request()->body();
+        $id = db()->select('seguridad', 'id')->orderBy('id')->limit(1)->column() + 1;
+
+        (new Usuario([
+          'id' => $id,
+          'Cedula' => $datos['cedula'],
+          'Nombres' => str_replace('  ', ' ', mb_convert_case($datos['nombres'], MB_CASE_TITLE)),
+          'Apellidos' => str_replace('  ', ' ', mb_convert_case($datos['apellidos'], MB_CASE_TITLE)),
+          'Usuario' => $datos['usuario'],
+          'password' => $datos['clave'],
+          'Privilegio' => 'S'
+        ]))->save();
+
+        response()->redirect('/usuarios');
+      });
+
+      app()->get('/{id}/eliminar', static function (int $id): void {
+        Usuario::query()->find($id)->delete();
+        response()->redirect('/usuarios');
+      });
+    });
+  }]);
 }]);
