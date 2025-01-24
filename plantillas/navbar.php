@@ -98,7 +98,7 @@
 
     <li class="nav-item">
       <a class="nav-link" data-widget="login.php" data-controlsidebar-slide="true" href="login.php" role="button">
-        <i class="fas fa-sign-out-alt"> salir</i>
+        <i class="fas fa-sign-out-alt"> Salir</i>
       </a>
     </li>
   </ul>
