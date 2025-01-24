@@ -14,7 +14,5 @@ app()->group('/ingreso', ['middleware' => 'auth.guest', function (): void {
 }]);
 
 app()->group('/', ['middleware' => 'auth.required', function (): void {
-  app()->get('/', function (): void {
-    echo 'home';
-  });
+  app()->get('/', static fn() => Blade::renderizar('paginas.inicio'));
 }]);
