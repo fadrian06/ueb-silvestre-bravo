@@ -8,6 +8,7 @@ auth()->config('session', true);
 auth()->config('messages.loginParamsError', 'Cédula o contraseña incorrecta');
 auth()->config('messages.loginPasswordError', auth()->config('messages.loginParamsError'));
 auth()->config('timestamps', false);
+auth()->config('db.table', 'seguridad');
 
 auth()->middleware('auth.required', function (): void {
   if (!auth()->id()) {
@@ -19,6 +20,10 @@ auth()->middleware('auth.guest', function (): void {
   if (auth()->id()) {
     response()->redirect('/');
   }
+});
+
+auth()->config('password.verify', function (string $password, string $hash): bool {
+  return $password === $hash;
 });
 
 $container = new Container;

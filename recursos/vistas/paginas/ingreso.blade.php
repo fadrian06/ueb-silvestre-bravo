@@ -13,7 +13,7 @@
         {{-- <x-ingreso-iconos /> --}}
         <p>U.E.B."Silvestre A. Bravo L."</p>
 
-        <form class="form" method="POST" action="./app/UserController.php">
+        <form class="form" method="post">
           <label>
             <i class="bx bx-user-circle"></i>
             <input name="usuario" placeholder="Usuario" required />

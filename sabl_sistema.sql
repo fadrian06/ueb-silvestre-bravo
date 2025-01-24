@@ -257,12 +257,12 @@ CREATE TABLE `sección` (
 --
 
 CREATE TABLE `seguridad` (
-  `Id_usuario` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `Cedula` varchar(30) NOT NULL,
   `Nombres` varchar(50) NOT NULL,
   `Apellidos` varchar(50) NOT NULL,
   `Usuario` varchar(15) NOT NULL,
-  `Clave` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `Privilegio` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -270,7 +270,7 @@ CREATE TABLE `seguridad` (
 -- Volcado de datos para la tabla `seguridad`
 --
 
-INSERT INTO `seguridad` (`Id_usuario`, `Cedula`, `Nombres`, `Apellidos`, `Usuario`, `Clave`, `Privilegio`) VALUES
+INSERT INTO `seguridad` (`id`, `Cedula`, `Nombres`, `Apellidos`, `Usuario`, `password`, `Privilegio`) VALUES
 (1, '30680625', 'Chiqui', 'Pico', 'chiki', 'chiki12345', 'A'),
 (2, '30680623', 'carelis', 'vargas', 'carelis', 'carelis1234', 'A');
 
