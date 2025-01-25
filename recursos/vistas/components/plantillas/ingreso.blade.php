@@ -8,11 +8,13 @@
     <base href="{{ str_replace('index.php', '', $_SERVER['SCRIPT_NAME']) }}" />
     <link rel="icon" href="./imagenes/Admin.jpg" />
     <link rel="stylesheet" href="./dist/ingreso.css" />
+    <script src="./dist/ingreso.js"></script>
   </head>
 
   <body>
     {{ $slot }}
-    <script src="./dist/ingreso.js"></script>
+
+    <x-notificaciones.errores />
   </body>
 
 </html>

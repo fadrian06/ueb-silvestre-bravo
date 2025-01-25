@@ -6,7 +6,7 @@ use Symfony\Component\Dotenv\Dotenv;
 
 (new Dotenv)->load(__DIR__ . '/.env');
 auth()->config('session', true);
-auth()->config('messages.loginParamsError', 'Cédula o contraseña incorrecta');
+auth()->config('messages.loginParamsError', 'Usuario o contraseña incorrecta');
 auth()->config('messages.loginPasswordError', auth()->config('messages.loginParamsError'));
 auth()->config('timestamps', false);
 auth()->config('db.table', 'seguridad');

@@ -10,7 +10,9 @@
     "illuminate/container": "^9.52",
     "illuminate/database": "^9.52",
     "leafs/db": "^2.3",
-    "jenssegers/date": "^4.0"
+    "jenssegers/date": "^4.0",
+    "leafs/form": "^3.2",
+    "leafs/session": "^2.3"
   },
   "autoload": {
     "psr-4": {

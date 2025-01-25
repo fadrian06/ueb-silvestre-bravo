@@ -3,7 +3,7 @@
     "@fontsource-variable/montserrat": "^5.1.1",
     "boxicons": "^2.1.4",
     "esbuild": "0.21.5",
-    "file-drop-element": "^1.0.1"
+    "noty": "^3.1.4"
   },
   "scripts": {
     "dev": "esbuild recursos/js/ingreso.js recursos/js/inicio.js --outdir=dist --bundle --watch --sourcemap --loader:.woff2=copy --loader:.woff=copy --loader:.eot=copy --loader:.ttf=copy --loader:.svg=dataurl",

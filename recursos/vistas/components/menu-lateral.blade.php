@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link text-wrap d-flex align-items-center text-center">
-    <img src="/sistema/imagenes/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="./imagenes/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">Silvester Antonio Bravo Lopéz</span>
   </a>
 
@@ -10,7 +10,7 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center text-center">
       <div class="image">
-        <img src="/sistema/imagenes/Admin.jpg" class="img-circle elevation-2" alt="User Image">
+        <img src="./imagenes/Admin.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info text-wrap">
         <a href="#" class="d-block">

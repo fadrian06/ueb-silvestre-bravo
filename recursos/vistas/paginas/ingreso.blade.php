@@ -19,10 +19,14 @@
           </div>
         @endif
 
-        <form class="form" method="post">
+        <form class="form" method="post" novalidate>
           <label>
             <i class="bx bx-user-circle"></i>
-            <input name="usuario" placeholder="Usuario" required />
+            <input
+              name="usuario"
+              placeholder="Usuario"
+              required
+              value="{{ flash()->display('datos')['usuario'] ?? '' }}" />
           </label>
 
           <label>

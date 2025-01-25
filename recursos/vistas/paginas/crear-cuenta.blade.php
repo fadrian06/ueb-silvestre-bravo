@@ -1,3 +1,9 @@
+@php
+
+$datos = flash()->display('datos');
+
+@endphp
+
 <x-plantillas.ingreso>
   <div class="container-form">
     <div class="information">
@@ -24,7 +30,8 @@
               name="cedula"
               required
               min="1"
-              placeholder="Cédula" />
+              placeholder="Cédula"
+              value="{{ $datos['cedula'] ?? '' }}" />
           </label>
 
           <label>
@@ -34,7 +41,8 @@
               required
               minlength="3"
               placeholder="Nombres"
-              pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}" />
+              pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
+              value="{{ $datos['nombres'] ?? '' }}" />
           </label>
 
           <label>
@@ -43,8 +51,9 @@
               name="apellidos"
               required
               minlength="3"
-              placeholder="Nombres"
-              pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}" />
+              placeholder="Apellidos"
+              pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
+              value="{{ $datos['apellidos'] ?? '' }}" />
           </label>
 
           <label>
@@ -52,7 +61,8 @@
             <input
               name="usuario"
               required
-              placeholder="Usuario" />
+              placeholder="Usuario"
+              value="{{ $datos['usuario'] ?? '' }}" />
           </label>
 
           <label>
@@ -64,7 +74,8 @@
               placeholder="Contraseña"
               minlength="8"
               pattern="(?=.*\d)(?=.*[A-ZÑ])(?=.*[a-zñ])(?=.*\W).{8,}"
-              title="Al menos 8 caracteres (mínimo un dígito, una mayúscula, una minúscula y un símbolo)" />
+              title="Al menos 8 caracteres (mínimo un dígito, una mayúscula, una minúscula y un símbolo)"
+              value="{{ $datos['clave'] ?? '' }}" />
           </label>
 
           <input type="submit" value="Crear cuenta" />
