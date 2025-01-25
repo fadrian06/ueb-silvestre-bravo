@@ -1,11 +1,24 @@
 @php
 
 $datos = flash()->display('datos');
+$afinidades = [
+'Madre',
+'Padre',
+'Tío',
+'Tía',
+'Abuelo',
+'Abuela',
+'Hermano',
+'Hermana'
+];
 
 @endphp
 
-<x-plantillas.inicio titulo="Registrar estudiante">
-  <form method="post" action="./estudiantes" class="card card-body col-lg-6 mx-auto">
+<x-plantillas.inicio titulo="Registrar representante">
+  <form
+    method="post"
+    action="./representantes"
+    class="card card-body col-lg-6 mx-auto">
     <label class="input-group">
       <i class="input-group-text bx bx-id-card"></i>
       <select
@@ -17,7 +30,7 @@ $datos = flash()->display('datos');
         <option
           value="{{ $nacionalidad }}"
           class="text-capitalize"
-          @selected(@$datos['nacionalidad'] === $nacionalidad)>
+          @selected(@$datos['nacionalidad']===$nacionalidad)>
           {{ $nacionalidad }}
         </option>
         @endforeach
@@ -91,19 +104,45 @@ $datos = flash()->display('datos');
     </label>
 
     <label class="input-group">
-      <i class="input-group-text bx bx-user"></i>
-      <select name="idRepresentante" required class="form-control">
-        <option value="">Representante</option>
-        @foreach (SABL\Modelos\Representante::all() as $representante)
-          <option
-            value="{{ $representante->Id_Repres }}"
-            @selected(@$datos['idRepresentante'] === $representante->Id_Repres)>
-            {{ $representante }}
-          </option>
+      <i class="input-group-text bx bx-envelope"></i>
+      <input
+        type="email"
+        name="correo"
+        required
+        placeholder="Correo electrónico"
+        class="form-control"
+        value="{{ $datos['correo'] ?? '' }}" />
+    </label>
+
+    <label class="input-group">
+      <i class="input-group-text bx bx-phone"></i>
+      <input
+        type="tel"
+        name="telefono"
+        required
+        placeholder="Teléfono"
+        class="form-control"
+        value="{{ $datos['telefono'] ?? '' }}"
+        pattern="[0-9]{11,13}"
+        title="Ejemplo (04165335826 o 04247542450)" />
+    </label>
+
+    <label class="input-group">
+      <i class="input-group-text bx bx-id-card"></i>
+      <select
+        name="afinidadConEstudiante"
+        required
+        class="form-control">
+        <option value="">Afinidad con el estudiante</option>
+        @foreach ($afinidades as $afinidad)
+        <option
+          @selected(@$datos['afinidadConEstudiante']===$afinidad)>
+          {{ $afinidad }}
+        </option>
         @endforeach
       </select>
     </label>
 
-    <button class="btn btn-primary">Registrar estudiante</button>
+    <button class="btn btn-primary">Registrar representante</button>
   </form>
 </x-plantillas.inicio>

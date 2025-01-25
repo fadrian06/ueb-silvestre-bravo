@@ -4,7 +4,6 @@ namespace SABL\Controladores;
 
 use Blade;
 use Leaf\Helpers\Password;
-use SABL\Modelos\Usuario;
 
 final readonly class ControladorDePerfil extends Controlador
 {

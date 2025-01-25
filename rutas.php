@@ -4,6 +4,7 @@ use SABL\Controladores\ControladorDeCrearCuenta;
 use SABL\Controladores\ControladorDeEstudiantes;
 use SABL\Controladores\ControladorDeIngreso;
 use SABL\Controladores\ControladorDePerfil;
+use SABL\Controladores\ControladorDeRepresentantes;
 use SABL\Controladores\ControladorDeUsuarios;
 
 app()->group('/ingreso', ['middleware' => 'auth.guest', static function (): void {
@@ -98,13 +99,24 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
   }]);
 
   app()->group('/estudiantes', static function (): void {
-    app()->get('/', [ControladorDeEstudiantes::class, 'mostrarEstudiantes']);
-    app()->post('/', [ControladorDeEstudiantes::class, 'registrarEstudiante']);
+    app()->get('/', [ControladorDeEstudiantes::class, 'mostrarListado']);
+    app()->post('/', [ControladorDeEstudiantes::class, 'registrar']);
     app()->get('/registrar', [ControladorDeEstudiantes::class, 'mostrarFormularioDeRegistro']);
     app()->group('/{id}', static function (): void {
-      app()->get('/eliminar', [ControladorDeEstudiantes::class, 'eliminarEstudiante']);
+      app()->get('/eliminar', [ControladorDeEstudiantes::class, 'eliminar']);
       app()->get('/editar', [ControladorDeEstudiantes::class, 'mostrarFormularioDeEdicion']);
-      app()->post('/', [ControladorDeEstudiantes::class, 'actualizarEstudiante']);
+      app()->post('/', [ControladorDeEstudiantes::class, 'actualizar']);
+    });
+  });
+
+  app()->group('/representantes', static function (): void {
+    app()->get('/', [ControladorDeRepresentantes::class, 'mostrarListado']);
+    app()->post('/', [ControladorDeRepresentantes::class, 'registrar']);
+    app()->get('/registrar', [ControladorDeRepresentantes::class, 'mostrarFormularioDeRegistro']);
+    app()->group('/{id}', static function (): void {
+      app()->get('/eliminar', [ControladorDeRepresentantes::class, 'eliminar']);
+      app()->get('/editar', [ControladorDeRepresentantes::class, 'mostrarFormularioDeEdicion']);
+      app()->post('/', [ControladorDeRepresentantes::class, 'actualizar']);
     });
   });
 

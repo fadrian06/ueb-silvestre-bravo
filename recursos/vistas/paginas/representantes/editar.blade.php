@@ -1,11 +1,24 @@
 @php
 
 $datos = flash()->display('datos');
+$afinidades = [
+'Madre',
+'Padre',
+'Tío',
+'Tía',
+'Abuelo',
+'Abuela',
+'Hermano',
+'Hermana'
+];
 
 @endphp
 
-<x-plantillas.inicio titulo="Registrar estudiante">
-  <form method="post" action="./estudiantes" class="card card-body col-lg-6 mx-auto">
+<x-plantillas.inicio titulo="Editar representante">
+  <form
+    method="post"
+    action="./representantes/{{ $representante->Id_Repres }}"
+    class="card card-body col-lg-6 mx-auto">
     <label class="input-group">
       <i class="input-group-text bx bx-id-card"></i>
       <select
@@ -17,7 +30,10 @@ $datos = flash()->display('datos');
         <option
           value="{{ $nacionalidad }}"
           class="text-capitalize"
-          @selected(@$datos['nacionalidad'] === $nacionalidad)>
+          @selected(
+            @$datos['nacionalidad']===$nacionalidad
+            || $representante->Nacionalidad === $nacionalidad
+          )>
           {{ $nacionalidad }}
         </option>
         @endforeach
@@ -32,7 +48,7 @@ $datos = flash()->display('datos');
         min="1"
         placeholder="Cédula"
         class="form-control"
-        value="{{ $datos['cedula'] ?? '' }}" />
+        value="{{ $datos['cedula'] ?? $representante->Ced_Repres ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -44,7 +60,7 @@ $datos = flash()->display('datos');
         placeholder="Nombres"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
-        value="{{ $datos['nombres'] ?? '' }}" />
+        value="{{ $datos['nombres'] ?? $representante->Nom_Repres ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -56,7 +72,7 @@ $datos = flash()->display('datos');
         placeholder="Apellidos"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
-        value="{{ $datos['apellidos'] ?? '' }}" />
+        value="{{ $datos['apellidos'] ?? $representante->Apell_Repres ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -67,7 +83,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Fecha de nacimiento"
         class="form-control"
-        value="{{ $datos['fechaNacimiento'] ?? '' }}" />
+        value="{{ $datos['fechaNacimiento'] ?? $representante->Fec_Nac ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -77,7 +93,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Lugar de nacimiento"
         class="form-control"
-        value="{{ $datos['lugarNacimiento'] ?? '' }}" />
+        value="{{ $datos['lugarNacimiento'] ?? $representante->Luga_Nac ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -87,23 +103,52 @@ $datos = flash()->display('datos');
         required
         placeholder="Dirección"
         class="form-control"
-        value="{{ $datos['direccion'] ?? '' }}" />
+        value="{{ $datos['direccion'] ?? $representante->Dir_Exac ?? '' }}" />
     </label>
 
     <label class="input-group">
-      <i class="input-group-text bx bx-user"></i>
-      <select name="idRepresentante" required class="form-control">
-        <option value="">Representante</option>
-        @foreach (SABL\Modelos\Representante::all() as $representante)
-          <option
-            value="{{ $representante->Id_Repres }}"
-            @selected(@$datos['idRepresentante'] === $representante->Id_Repres)>
-            {{ $representante }}
-          </option>
+      <i class="input-group-text bx bx-envelope"></i>
+      <input
+        type="email"
+        name="correo"
+        required
+        placeholder="Correo electrónico"
+        class="form-control"
+        value="{{ $datos['correo'] ?? $representante->Email_Repres ?? '' }}" />
+    </label>
+
+    <label class="input-group">
+      <i class="input-group-text bx bx-phone"></i>
+      <input
+        type="tel"
+        name="telefono"
+        required
+        placeholder="Teléfono"
+        class="form-control"
+        value="{{ $datos['telefono'] ?? "0$representante->Telf_Repres" }}"
+        pattern="[0-9]{11,13}"
+        title="Ejemplo (04165335826 o 04247542450)" />
+    </label>
+
+    <label class="input-group">
+      <i class="input-group-text bx bx-id-card"></i>
+      <select
+        name="afinidadConEstudiante"
+        required
+        class="form-control">
+        <option value="">Afinidad con el estudiante</option>
+        @foreach ($afinidades as $afinidad)
+        <option
+          @selected(
+            @$datos['afinidadConEstudiante']===$afinidad
+            || $representante->Afin_con_Est === $afinidad
+          )>
+          {{ $afinidad }}
+        </option>
         @endforeach
       </select>
     </label>
 
-    <button class="btn btn-primary">Registrar estudiante</button>
+    <button class="btn btn-primary">Actualizar representante</button>
   </form>
 </x-plantillas.inicio>

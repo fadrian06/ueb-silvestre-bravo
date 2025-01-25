@@ -87,10 +87,10 @@
         </li>
 
         <li class="nav-item">
-          <a href="/sistema/Representante/representante x.php" class="nav-link">
+          <a href="./representantes" class="nav-link">
             <i class="nav-icon fas fa-male"></i>
             <p>
-              Representante
+              Representantes
             </p>
           </a>
         </li>

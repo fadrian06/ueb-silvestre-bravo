@@ -19,9 +19,8 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th>ID</th>
                 <th>Cédula</th>
-                <th>Nombres completo</th>
+                <th>Nombre completo</th>
                 <th>Fecha de nacimiento</th>
                 <th>Lugar de nacimiento</th>
                 <th>Dirección</th>
@@ -31,7 +30,6 @@
             <tbody>
               @foreach($estudiantes as $estudiante)
               <tr>
-                <td>{{ $estudiante->Id_Est }}</td>
                 <td>
                   {{ $estudiante->Nacionalidad === 'venezolano' ? 'V' : 'E' }}
                   -
@@ -43,7 +41,12 @@
                 </td>
                 <td class="text-capitalize">{{ $estudiante->Luga_Nac }}</td>
                 <td class="text-capitalize">{{ $estudiante->Dir_Exac }}</td>
-                <td>{{ $estudiante->representante }}</td>
+                <td>
+                  {{ $estudiante->representante }}
+                  <sup class="badge badge-primary text-capitalize">
+                    {{ $estudiante->representante->Afin_con_Est }}
+                  </sup>
+                </td>
                 <td class="btn-group">
                   <a
                     href="./estudiantes/{{ $estudiante->Id_Est }}/editar"

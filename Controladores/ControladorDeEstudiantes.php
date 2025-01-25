@@ -3,12 +3,11 @@
 namespace SABL\Controladores;
 
 use Blade;
-use Leaf\Helpers\Password;
 use SABL\Modelos\Estudiante;
 
 final readonly class ControladorDeEstudiantes extends Controlador
 {
-  static function mostrarEstudiantes(): void
+  static function mostrarListado(): void
   {
     $estudiantes = Estudiante::with(['representante'])->get();
 
@@ -23,7 +22,7 @@ final readonly class ControladorDeEstudiantes extends Controlador
     Blade::renderizar('paginas.estudiantes.registrar');
   }
 
-  static function registrarEstudiante(): void
+  static function registrar(): void
   {
     $datos = self::obtenerDatosValidados(request()->body());
     self::enviarErroresDeValidacionSiExisten('/estudiantes/registrar');
@@ -49,7 +48,7 @@ final readonly class ControladorDeEstudiantes extends Controlador
     response()->redirect('/estudiantes');
   }
 
-  static function eliminarEstudiante(int $id): void
+  static function eliminar(int $id): void
   {
     Estudiante::query()->find($id)->delete();
     response()->redirect('/estudiantes');
@@ -63,7 +62,7 @@ final readonly class ControladorDeEstudiantes extends Controlador
     );
   }
 
-  static function actualizarEstudiante(int $id): void
+  static function actualizar(int $id): void
   {
     $datos = self::obtenerDatosValidados(request()->body());
     self::enviarErroresDeValidacionSiExisten("/estudiantes/$id/editar");

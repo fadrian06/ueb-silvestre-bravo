@@ -35,13 +35,6 @@ final class Estudiante extends Model
     return new Date($this->Fec_Nac);
   }
 
-  protected function casts(): array
-  {
-    return [
-      'Fec_Nac' => 'datetime'
-    ];
-  }
-
   function __toString(): string
   {
     return mb_convert_case("$this->Nom_Est $this->Apell_Est", MB_CASE_TITLE);
