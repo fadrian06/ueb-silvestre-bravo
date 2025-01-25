@@ -2,4 +2,4 @@
 import "@fontsource-variable/montserrat";
 import "boxicons/css/boxicons.min.css";
 import "../css/ingreso.css";
-import "./setup-noty";
+import "./configurar-noty";

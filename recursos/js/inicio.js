@@ -1,2 +1,2 @@
 import "boxicons/css/boxicons.min.css";
-import "./setup-noty"
+import "./configurar-noty"
