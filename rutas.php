@@ -2,6 +2,7 @@
 
 use SABL\Controladores\ControladorDeCrearCuenta;
 use SABL\Controladores\ControladorDeIngreso;
+use SABL\Controladores\ControladorDePerfil;
 use SABL\Controladores\ControladorDeUsuarios;
 
 app()->group('/ingreso', ['middleware' => 'auth.guest', static function (): void {
@@ -94,4 +95,9 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
       });
     });
   }]);
+
+  app()->group('/perfil', static function (): void {
+    app()->get('/editar', [ControladorDePerfil::class, 'mostrarFormularioDeEdicion']);
+    app()->post('/', [ControladorDePerfil::class, 'actualizarPerfil']);
+  });
 }]);

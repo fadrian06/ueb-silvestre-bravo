@@ -1,8 +1,12 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="./" class="brand-link text-wrap d-flex align-items-center text-center">
-    <img src="./imagenes/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-light">Silvester Antonio Bravo Lopéz</span>
+    <img
+      src="./imagenes/logo.png"
+      class="brand-image img-circle elevation-3" />
+    <span class="brand-text font-weight-light">
+      Silvester Antonio Bravo Lopéz
+    </span>
   </a>
 
   <!-- Sidebar -->
@@ -13,7 +17,7 @@
         <img src="./imagenes/Admin.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info text-wrap">
-        <a href="javascript:" class="d-block">
+        <a href="./perfil/editar" class="d-block">
           {{ auth()->user()->Nombres }} {{ auth()->user()->Apellidos }}
         </a>
         <small class="text-light">
