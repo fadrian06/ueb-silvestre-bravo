@@ -1,4 +1,4 @@
-<x-plantillas.ingreso>
+<x-plantillas.ingreso titulo="Ingreso">
   <div class="container-form">
     <div class="information">
       <div class="info-childs">
