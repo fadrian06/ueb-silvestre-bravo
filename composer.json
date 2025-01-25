@@ -24,5 +24,30 @@
   },
   "require-dev": {
     "symfony/var-dumper": "^7.2"
+  },
+  "archive": {
+    "name": "SABL",
+    "exclude": [
+      ".editorconfig",
+      ".env",
+      ".gitignore",
+      "biome.json",
+      "composer.*",
+      "package*",
+      "*.todo",
+      "*.sublime-*",
+      "node_modules",
+      "recursos/css",
+      "recursos/js",
+      "*.tar",
+      "SABL-*"
+    ]
+  },
+  "scripts": {
+    "build": [
+      "npm run build",
+      "composer i --no-dev",
+      "composer archive"
+    ]
   }
 }
