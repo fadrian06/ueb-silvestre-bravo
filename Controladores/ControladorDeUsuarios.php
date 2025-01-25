@@ -8,7 +8,7 @@ use SABL\Modelos\Usuario;
 
 final readonly class ControladorDeUsuarios extends Controlador
 {
-  static function mostrarUsuarios(): void
+  static function mostrarSecretarios(): void
   {
     Blade::renderizar('paginas.usuarios.listado');
   }
@@ -20,7 +20,16 @@ final readonly class ControladorDeUsuarios extends Controlador
 
   static function registrarSecretario(): void
   {
-    $datos = request()->body();
+    $datos = form()->validate(request()->body(), [
+      'cedula' => 'number|min:1',
+      'nombres' => 'names',
+      'apellidos' => 'names',
+      'usuario' => 'username',
+      'clave' => 'password'
+    ]);
+
+    self::enviarErroresDeValidacionSiExisten('/usuarios');
+
     $id = db()->select('seguridad', 'id')->orderBy('id')->limit(1)->column() + 1;
 
     (new Usuario([
@@ -36,9 +45,39 @@ final readonly class ControladorDeUsuarios extends Controlador
     response()->redirect('/usuarios');
   }
 
-  static function eliminarUsuario(int $id): void
+  static function eliminarSecretario(int $id): void
   {
     Usuario::query()->find($id)->delete();
+    response()->redirect('/usuarios');
+  }
+
+  static function mostrarFormularioDeEdicion(int $id): void
+  {
+    Blade::renderizar(
+      'paginas.usuarios.editar',
+      ['usuario' => Usuario::query()->find($id)]
+    );
+  }
+
+  static function actualizarSecretario(int $id): void
+  {
+    $datos = form()->validate(request()->body(), [
+      'cedula' => 'number|min:1',
+      'nombres' => 'names',
+      'apellidos' => 'names',
+      'usuario' => 'username',
+      'clave' => 'password'
+    ]);
+
+    self::enviarErroresDeValidacionSiExisten("/usuarios/$id/editar");
+
+    $usuario = Usuario::query()->find($id);
+    $usuario->Cedula = $datos['cedula'];
+    $usuario->Nombres = $datos['nombres'];
+    $usuario->Apellidos = $datos['apellidos'];
+    $usuario->Usuario = $datos['usuario'];
+    $usuario->password = Password::hash($datos['clave']);
+    $usuario->save();
     response()->redirect('/usuarios');
   }
 }

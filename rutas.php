@@ -84,10 +84,14 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
 
   app()->group('/', ['middleware' => 'only-admins', static function (): void {
     app()->group('/usuarios', static function (): void {
-      app()->get('/', [ControladorDeUsuarios::class, 'mostrarUsuarios']);
+      app()->get('/', [ControladorDeUsuarios::class, 'mostrarSecretarios']);
       app()->post('/', [ControladorDeUsuarios::class, 'registrarSecretario']);
       app()->get('/registrar', [ControladorDeUsuarios::class, 'mostrarFormularioDeRegistro']);
-      app()->get('/{id}/eliminar', [ControladorDeUsuarios::class, 'eliminarUsuario']);
+      app()->group('/{id}', static function (): void {
+        app()->get('/eliminar', [ControladorDeUsuarios::class, 'eliminarSecretario']);
+        app()->get('/editar', [ControladorDeUsuarios::class, 'mostrarFormularioDeEdicion']);
+        app()->post('/', [ControladorDeUsuarios::class, 'actualizarSecretario']);
+      });
     });
   }]);
 }]);

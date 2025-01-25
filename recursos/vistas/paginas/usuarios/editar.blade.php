@@ -4,8 +4,11 @@ $datos = flash()->display('datos');
 
 @endphp
 
-<x-plantillas.inicio titulo="Registrar secretario">
-  <form method="post" action="./usuarios" class="card card-body col-lg-6 mx-auto">
+<x-plantillas.inicio titulo="Editar secretario">
+  <form
+    method="post"
+    action="./usuarios/{{ $usuario->id }}"
+    class="card card-body col-lg-6 mx-auto">
     <label class="input-group">
       <i class="input-group-text bx bx-id-card"></i>
       <input
@@ -15,7 +18,7 @@ $datos = flash()->display('datos');
         min="1"
         placeholder="Cédula"
         class="form-control"
-        value="{{ $datos['cedula'] ?? '' }}" />
+        value="{{ $datos['cedula'] ?? $usuario->Cedula ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -27,7 +30,7 @@ $datos = flash()->display('datos');
         placeholder="Nombres"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
-        value="{{ $datos['nombres'] ?? '' }}" />
+        value="{{ $datos['nombres'] ?? $usuario->Nombres ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -39,7 +42,7 @@ $datos = flash()->display('datos');
         placeholder="Nombres"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
-        value="{{ $datos['apellidos'] ?? '' }}" />
+        value="{{ $datos['apellidos'] ?? $usuario->Apellidos ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -49,7 +52,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Usuario"
         class="form-control"
-        value="{{ $datos['usuario'] ?? '' }}" />
+        value="{{ $datos['usuario'] ?? $usuario->Usuario ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -66,6 +69,6 @@ $datos = flash()->display('datos');
         value="{{ $datos['clave'] ?? '' }}" />
     </label>
 
-    <button class="btn btn-primary">Registrar secretario</button>
+    <button class="btn btn-primary">Actualizar secretario</button>
   </form>
 </x-plantillas.inicio>
