@@ -78,7 +78,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/sistema/Estudiante/estudiantes x.php" class="nav-link">
+          <a href="./estudiantes" class="nav-link">
             <i class="nav-icon fas fa-graduation-cap"></i>
             <p>
               Estudiantes

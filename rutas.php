@@ -1,6 +1,7 @@
 <?php
 
 use SABL\Controladores\ControladorDeCrearCuenta;
+use SABL\Controladores\ControladorDeEstudiantes;
 use SABL\Controladores\ControladorDeIngreso;
 use SABL\Controladores\ControladorDePerfil;
 use SABL\Controladores\ControladorDeUsuarios;
@@ -95,6 +96,17 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
       });
     });
   }]);
+
+  app()->group('/estudiantes', static function (): void {
+    app()->get('/', [ControladorDeEstudiantes::class, 'mostrarEstudiantes']);
+    app()->post('/', [ControladorDeEstudiantes::class, 'registrarEstudiante']);
+    app()->get('/registrar', [ControladorDeEstudiantes::class, 'mostrarFormularioDeRegistro']);
+    app()->group('/{id}', static function (): void {
+      app()->get('/eliminar', [ControladorDeEstudiantes::class, 'eliminarEstudiante']);
+      app()->get('/editar', [ControladorDeEstudiantes::class, 'mostrarFormularioDeEdicion']);
+      app()->post('/', [ControladorDeEstudiantes::class, 'actualizarEstudiante']);
+    });
+  });
 
   app()->group('/perfil', static function (): void {
     app()->get('/editar', [ControladorDePerfil::class, 'mostrarFormularioDeEdicion']);

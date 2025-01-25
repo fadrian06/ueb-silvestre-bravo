@@ -50,3 +50,15 @@ form()->rule(
   '/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}$/',
   '{Field} debe contener solo letras y espacios'
 );
+
+form()->rule(
+  'nationality',
+  '/^(venezolano|extranjero)$/',
+  '{Field} debe ser "venezolano" o "extranjero"'
+);
+
+form()->rule(
+  'address',
+  '/^[a-zA-Z0-9-_ñÑáéíóúÁÉÍÓÚ\s,]+$/',
+  '{Field} debe ser una dirección válida, sólo letras, números y símbolos (, - _)'
+);

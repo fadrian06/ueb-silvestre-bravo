@@ -1,4 +1,4 @@
-<x-plantillas.inicio titulo="Usuarios">
+<x-plantillas.inicio titulo="Listado de usuarios">
   <div class="col-md-12 table-responsive">
     <div class="card card-outline card-primary">
       <div class="card-header d-flex align-items-center justify-content-between">
