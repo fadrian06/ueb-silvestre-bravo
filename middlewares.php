@@ -4,9 +4,7 @@ use SABL\Modelos\Usuario;
 
 auth()->middleware('auth.required', static function (): void {
   if (!auth()->user()) {
-    response()
-      ->withFlash('errores', ['Acceso denegado, debes iniciar sesión para continuar'])
-      ->redirect('/ingreso');
+    response()->redirect('/ingreso');
   }
 });
 
