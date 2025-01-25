@@ -23,6 +23,7 @@
       </div>
     </div>
     <x-javascripts />
+    <x-notificaciones.errores />
   </body>
 
 </html>

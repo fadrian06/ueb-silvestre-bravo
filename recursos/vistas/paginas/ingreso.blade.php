@@ -19,7 +19,7 @@
           </div>
         @endif
 
-        <form class="form" method="post" novalidate>
+        <form class="form" method="post">
           <label>
             <i class="bx bx-user-circle"></i>
             <input

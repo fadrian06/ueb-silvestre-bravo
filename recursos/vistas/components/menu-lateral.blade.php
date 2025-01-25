@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link text-wrap d-flex align-items-center text-center">
+  <a href="./" class="brand-link text-wrap d-flex align-items-center text-center">
     <img src="./imagenes/logo.png" alt="Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-weight-light">Silvester Antonio Bravo Lopéz</span>
   </a>
@@ -13,10 +13,10 @@
         <img src="./imagenes/Admin.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info text-wrap">
-        <a href="#" class="d-block">
+        <a href="javascript:" class="d-block">
           {{ auth()->user()->Nombres }} {{ auth()->user()->Apellidos }}
         </a>
-        <small href="javascript:" class="text-light">
+        <small class="text-light">
           {{ auth()->user()->Privilegio === 'A' ? 'Administrador' : 'Secretario' }}
         </small>
       </div>
@@ -35,12 +35,12 @@
     </div>
 
     <!-- Sidebar Menu -->
-    <nav class="mt-2">
+    <nav class="mt-2 overflow-y-scroll">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item ">
-          <a href="/sistema/inicio.php" class="nav-link">
+          <a href="./" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Inicio

@@ -1,6 +1,6 @@
 @if (session()->get('leaf.flash'))
   <script>
-    let errores = `{{!! json_encode(flash()->display('errores')) !!}}`
+    let errores = `{{!! json_encode($errores) !!}}`
     errores = errores.substring(1, errores.length - 1)
     errores = JSON.parse(errores)
 
