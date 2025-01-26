@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01fde84ff6609a1213a4bd8e970db1a4",
+    "content-hash": "9b3df79cfa8815fed55f0c05359137f1",
     "packages": [
         {
             "name": "brick/math",
@@ -1356,16 +1356,16 @@
         },
         {
             "name": "leafs/exception",
-            "version": "v3.6",
+            "version": "v3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafsphp/exceptions.git",
-                "reference": "dea2feb7f179c6d6a6e4cae45c97d353ae1f57cb"
+                "reference": "47e7b5575dbda0a5122f9435e695e347cded75dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafsphp/exceptions/zipball/dea2feb7f179c6d6a6e4cae45c97d353ae1f57cb",
-                "reference": "dea2feb7f179c6d6a6e4cae45c97d353ae1f57cb",
+                "url": "https://api.github.com/repos/leafsphp/exceptions/zipball/47e7b5575dbda0a5122f9435e695e347cded75dd",
+                "reference": "47e7b5575dbda0a5122f9435e695e347cded75dd",
                 "shasum": ""
             },
             "require": {
@@ -1415,7 +1415,7 @@
                 "whoops"
             ],
             "support": {
-                "source": "https://github.com/leafsphp/exceptions/tree/v3.6"
+                "source": "https://github.com/leafsphp/exceptions/tree/v3.6.1"
             },
             "funding": [
                 {
@@ -1423,7 +1423,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-14T11:49:35+00:00"
+            "time": "2025-01-25T13:54:37+00:00"
         },
         {
             "name": "leafs/form",
@@ -3522,7 +3522,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.2"
+        "php": "^8.2"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
