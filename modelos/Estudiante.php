@@ -5,6 +5,7 @@ namespace SABL\Modelos;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Jenssegers\Date\Date;
 
 final class Estudiante extends Model
@@ -24,6 +25,11 @@ final class Estudiante extends Model
     'Dir_Exac',
     'Id_Repres'
   ];
+
+  function boletines(): HasMany
+  {
+    return $this->hasMany(Boletin::class, 'Id_Est', 'Id_Est');
+  }
 
   function representante(): BelongsTo
   {
