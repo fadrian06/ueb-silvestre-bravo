@@ -96,7 +96,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/sistema/Profesor/profesor x.php" class="nav-link">
+          <a href="./profesores" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
             <p>
               Profesores

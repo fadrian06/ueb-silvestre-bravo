@@ -4,6 +4,7 @@ use SABL\Controladores\ControladorDeCrearCuenta;
 use SABL\Controladores\ControladorDeEstudiantes;
 use SABL\Controladores\ControladorDeIngreso;
 use SABL\Controladores\ControladorDePerfil;
+use SABL\Controladores\ControladorDeProfesores;
 use SABL\Controladores\ControladorDeRepresentantes;
 use SABL\Controladores\ControladorDeUsuarios;
 
@@ -117,6 +118,17 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
       app()->get('/eliminar', [ControladorDeRepresentantes::class, 'eliminar']);
       app()->get('/editar', [ControladorDeRepresentantes::class, 'mostrarFormularioDeEdicion']);
       app()->post('/', [ControladorDeRepresentantes::class, 'actualizar']);
+    });
+  });
+
+  app()->group('/profesores', static function (): void {
+    app()->get('/', [ControladorDeProfesores::class, 'mostrarListado']);
+    app()->post('/', [ControladorDeProfesores::class, 'registrar']);
+    app()->get('/registrar', [ControladorDeProfesores::class, 'mostrarFormularioDeRegistro']);
+    app()->group('/{id}', static function (): void {
+      app()->get('/eliminar', [ControladorDeProfesores::class, 'eliminar']);
+      app()->get('/editar', [ControladorDeProfesores::class, 'mostrarFormularioDeEdicion']);
+      app()->post('/', [ControladorDeProfesores::class, 'actualizar']);
     });
   });
 
