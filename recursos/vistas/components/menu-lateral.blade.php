@@ -114,7 +114,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/sistema/periodos x.php" class="nav-link">
+          <a href="./periodos" class="nav-link">
             <i class="nav-icon fas fa-calendar"></i>
             <p>
               Periodos

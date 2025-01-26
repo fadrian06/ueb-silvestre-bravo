@@ -4,6 +4,7 @@ use SABL\Controladores\ControladorDeCrearCuenta;
 use SABL\Controladores\ControladorDeEstudiantes;
 use SABL\Controladores\ControladorDeIngreso;
 use SABL\Controladores\ControladorDePerfil;
+use SABL\Controladores\ControladorDePeriodos;
 use SABL\Controladores\ControladorDeProfesores;
 use SABL\Controladores\ControladorDeRepresentantes;
 use SABL\Controladores\ControladorDeUsuarios;
@@ -129,6 +130,17 @@ app()->group('/', ['middleware' => 'auth.required', static function (): void {
       app()->get('/eliminar', [ControladorDeProfesores::class, 'eliminar']);
       app()->get('/editar', [ControladorDeProfesores::class, 'mostrarFormularioDeEdicion']);
       app()->post('/', [ControladorDeProfesores::class, 'actualizar']);
+    });
+  });
+
+  app()->group('/periodos', static function (): void {
+    app()->get('/', [ControladorDePeriodos::class, 'mostrarListado']);
+    app()->post('/', [ControladorDePeriodos::class, 'registrar']);
+    app()->get('/aperturar', [ControladorDePeriodos::class, 'mostrarFormularioDeRegistro']);
+    app()->group('/{id}', static function (): void {
+      app()->get('/eliminar', [ControladorDePeriodos::class, 'eliminar']);
+      app()->get('/editar', [ControladorDePeriodos::class, 'mostrarFormularioDeEdicion']);
+      app()->post('/', [ControladorDePeriodos::class, 'actualizar']);
     });
   });
 
