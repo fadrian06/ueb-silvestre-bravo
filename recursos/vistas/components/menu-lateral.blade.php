@@ -123,7 +123,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/sistema/materias x.php" class="nav-link">
+          <a href="./materias" class="nav-link">
             <i class="nav-icon fas fa-copy"></i>
             <p>
               Materias

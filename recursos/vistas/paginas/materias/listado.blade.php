@@ -1,15 +1,15 @@
-<x-plantillas.inicio titulo="Listado de períodos">
+<x-plantillas.inicio titulo="Listado de materias">
   <div class="col-md-12">
     <div class="card card-outline card-primary">
       <div class="card-header d-flex align-items-center justify-content-between">
         <h3 class="card-title">
-          Apertura los períodos con sus datos especificos.
+          Apertura las materias con sus datos especificos.
         </h3>
 
         <div class="card-tools">
-          <a class="btn btn-info my-2" href="./periodos/aperturar">
+          <a class="btn btn-info my-2" href="./materias/aperturar">
             <i class="fa fa-plus-square"></i>
-            Aperturar período
+            Aperturar materia
           </a>
         </div>
       </div>
@@ -19,27 +19,25 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th>Período</th>
-                <th>Inicia</th>
-                <th>Termina</th>
-                <th># de semanas</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
               </tr>
             </thead>
             <tbody>
-              @foreach($periodos as $periodo)
+              @foreach($materias as $materia)
               <tr>
-                <td>{{ $periodo }}</td>
-                <td>{{ $periodo->inicio->format('d \d\e M \d\e\l Y') }}</td>
-                <td>{{ $periodo->fin->format('d \d\e M \d\e\l Y') }}</td>
-                <td>{{ $periodo->Número_semanas }}</td>
+                <td>{{ $materia->Codigo_Mat }}</td>
+                <td>{{ $materia }}</td>
+                <td>{{ $materia->Descripción }}</td>
                 <td class="btn-group">
                   <a
-                    href="./periodos/{{ $periodo->Id_Periodo }}/editar"
+                    href="./materias/{{ $materia->Id_Mat }}/editar"
                     class="btn btn-primary">
                     <i class="fas fa-pencil-alt"></i>
                   </a>
                   <a
-                    href="./periodos/{{ $periodo->Id_Periodo }}/eliminar"
+                    href="./materias/{{ $materia->Id_Mat }}/eliminar"
                     class="btn btn-danger">
                     <i class="fa fa-trash"></i>
                   </a>

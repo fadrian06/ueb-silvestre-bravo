@@ -62,3 +62,9 @@ form()->rule(
   '/^[a-zA-Z0-9-_ñÑáéíóúÁÉÍÓÚ\s,]+$/',
   '{Field} debe ser una dirección válida, sólo letras, números y símbolos (, - _)'
 );
+
+form()->rule(
+  'description',
+  '/^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+$/',
+  '{Field} debe contener solo letras y espacios'
+);
