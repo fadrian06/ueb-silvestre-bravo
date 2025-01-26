@@ -31,7 +31,7 @@ final class Profesor extends Model
     return new Date($this->Fec_Nac);
   }
 
-  protected function getFechaIngresoAlMinisterio(): DateTimeInterface
+  protected function getFechaIngresoMinisterioAttribute(): DateTimeInterface
   {
     return new Date($this->Fec_Incres_T_Minis);
   }

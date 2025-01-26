@@ -38,9 +38,9 @@ final readonly class ControladorDeProfesores extends Controlador
       'Ced_Prof' => $datos['cedula'],
       'Nom_Prof' => str_replace('  ', ' ', mb_convert_case($datos['nombres'], MB_CASE_TITLE)),
       'Apell_Prof' => str_replace('  ', ' ', mb_convert_case($datos['apellidos'], MB_CASE_TITLE)),
-      'Codigo_Carg_Prof' => null,
-      'Codigo_Domina' => null,
-      'Fec_Incres_T_Minis' => null,
+      'Codigo_Carg_Prof' => $datos['codigoCarga'],
+      'Codigo_Domina' => $datos['codigoNomina'],
+      'Fec_Incres_T_Minis' => $datos['fechaIngresoMinisterio'],
       'Fec_Nac' => $datos['fechaNacimiento'],
       'Email_Prof' => $datos['correo'],
       'Telf_Prof' => $datos['telefono'],
@@ -74,9 +74,9 @@ final readonly class ControladorDeProfesores extends Controlador
     $profesor->Nom_Prof = str_replace('  ', ' ', mb_convert_case($datos['nombres'], MB_CASE_TITLE));
     $profesor->Apell_Prof = str_replace('  ', ' ', mb_convert_case($datos['apellidos'], MB_CASE_TITLE));
     $profesor->Fec_Nac = $datos['fechaNacimiento'];
-    $profesor->Codigo_Carg_Prof = null;
-    $profesor->Codigo_Domina = null;
-    $profesor->Fec_Incres_T_Minis = null;
+    $profesor->Codigo_Carg_Prof = $datos['codigoCarga'];
+    $profesor->Codigo_Domina = $datos['codigoNomina'];
+    $profesor->Fec_Incres_T_Minis = $datos['fechaIngresoMinisterio'];
     $profesor->Email_Prof = $datos['correo'];
     $profesor->Telf_Prof = $datos['telefono'];
     $profesor->save();
@@ -92,7 +92,7 @@ final readonly class ControladorDeProfesores extends Controlador
       'fechaNacimiento' => 'date',
       'codigoCarga' => 'string',
       'codigoNomina' => 'string',
-      'fechaIngresoMinisterio' => '',
+      'fechaIngresoMinisterio' => 'date',
       'correo' => 'email',
       'telefono' => 'phone'
     ]) ?: null;

@@ -4,10 +4,10 @@ $datos = flash()->display('datos');
 
 @endphp
 
-<x-plantillas.inicio titulo="Registrar profesor">
+<x-plantillas.inicio titulo="Editar profesor">
   <form
     method="post"
-    action="./profesores"
+    action="./profesores/{{ $profesor->Id_Prof }}"
     class="card card-body col-lg-6 mx-auto">
     <label class="input-group">
       <i class="input-group-text bx bx-id-card"></i>
@@ -18,7 +18,7 @@ $datos = flash()->display('datos');
         min="1"
         placeholder="Cédula"
         class="form-control"
-        value="{{ $datos['cedula'] ?? '' }}" />
+        value="{{ $datos['cedula'] ?? $profesor->Ced_Prof ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -30,7 +30,7 @@ $datos = flash()->display('datos');
         placeholder="Nombres"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
-        value="{{ $datos['nombres'] ?? '' }}" />
+        value="{{ $datos['nombres'] ?? $profesor->Nom_Prof ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -42,7 +42,7 @@ $datos = flash()->display('datos');
         placeholder="Apellidos"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
-        value="{{ $datos['apellidos'] ?? '' }}" />
+        value="{{ $datos['apellidos'] ?? $profesor->Apell_Prof ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -53,7 +53,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Fecha de nacimiento"
         class="form-control"
-        value="{{ $datos['fechaNacimiento'] ?? '' }}" />
+        value="{{ $datos['fechaNacimiento'] ?? $profesor->Fec_Nac ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -63,7 +63,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Código de carga"
         class="form-control"
-        value="{{ $datos['codigoCarga'] ?? '' }}" />
+        value="{{ $datos['codigoCarga'] ?? $profesor->Codigo_Carg_Prof ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -73,7 +73,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Código de nómina"
         class="form-control"
-        value="{{ $datos['codigoNomina'] ?? '' }}" />
+        value="{{ $datos['codigoNomina'] ?? $profesor->Codigo_Domina ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -84,7 +84,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Fecha de ingreso al ministerio"
         class="form-control"
-        value="{{ $datos['fechaIngresoMinisterio'] ?? '' }}" />
+        value="{{ $datos['fechaIngresoMinisterio'] ?? $profesor->Fec_Incres_T_Minis ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -95,7 +95,7 @@ $datos = flash()->display('datos');
         required
         placeholder="Correo electrónico"
         class="form-control"
-        value="{{ $datos['correo'] ?? '' }}" />
+        value="{{ $datos['correo'] ?? $profesor->Email_Prof ?? '' }}" />
     </label>
 
     <label class="input-group">
@@ -106,11 +106,11 @@ $datos = flash()->display('datos');
         required
         placeholder="Teléfono"
         class="form-control"
-        value="{{ $datos['telefono'] ?? '' }}"
+        value="{{ $datos['telefono'] ?? $profesor->Telf_Prof ?? '' }}"
         pattern="[0-9]{11,13}"
         title="Ejemplo (04165335826 o 04247542450)" />
     </label>
 
-    <button class="btn btn-primary">Registrar profesor</button>
+    <button class="btn btn-primary">Actualizar profesor</button>
   </form>
 </x-plantillas.inicio>

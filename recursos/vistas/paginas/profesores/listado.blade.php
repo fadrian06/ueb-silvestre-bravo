@@ -39,15 +39,17 @@
                 </td>
                 <td>{{ $profesor->Codigo_Carg_Prof }}</td>
                 <td>{{ $profesor->Codigo_Domina }}</td>
-                <td>{{ $profesor->fechaIngresoAlMinisterio }}</td>
                 <td>
-                  <a href="mailto:{{ $profesor->Email_Repres }}">
-                    {{ $profesor->Email_Repres }}
+                  {{ $profesor->fechaIngresoMinisterio->format('d \d\e M \d\e\l Y') }}
+                </td>
+                <td>
+                  <a href="mailto:{{ $profesor->Email_Prof }}">
+                    {{ $profesor->Email_Prof }}
                   </a>
                 </td>
                 <td>
-                  <a href="tel:+58{{ $profesor->Telf_Repres }}">
-                    0{{ $profesor->Telf_Repres }}
+                  <a href="tel:+58{{ $profesor->Telf_Prof }}">
+                    0{{ $profesor->Telf_Prof }}
                   </a>
                 </td>
                 <td class="btn-group">
