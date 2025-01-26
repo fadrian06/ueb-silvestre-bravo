@@ -4,7 +4,7 @@ $datos = flash()->display('datos');
 
 @endphp
 
-<x-plantillas.ingreso>
+<x-plantillas.ingreso titulo="Crear cuenta">
   <div class="container-form">
     <div class="information">
       <div class="info-childs">

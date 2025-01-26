@@ -39,7 +39,7 @@ $datos = flash()->display('datos');
         name="apellidos"
         required
         minlength="3"
-        placeholder="Nombres"
+        placeholder="Apellidos"
         pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{3,}"
         class="form-control"
         value="{{ $datos['apellidos'] ?? $usuario->Apellidos ?? '' }}" />
