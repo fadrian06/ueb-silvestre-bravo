@@ -181,3 +181,17 @@ CREATE TABLE seguridad (
   password varchar(100) NOT NULL,
   Privilegio varchar(100) NOT NULL
 );
+
+insert into periodo (Id_Periodo, Nom_Periodo, Fec_Inicio, Fec_fin, `Número_semanas`, Estad_Periodo, `Fec_Creación`)
+  values (1, '2024-2025', '2024-09-16', '2025-07-16', 40, 'activo', '2024-09-16');
+
+insert into nivel_estudio (Id_Nivel_estud, Nom_Nivel_estd)
+  values (1, '1° año'), (2, '2° año'), (3, '3° año'), (4, '4° año'), (5, '5° año');
+
+insert into `sección` (Id_Seccion, Nom_Seccion, Estad_Seccion, Fec_Creacion, Id_Nivel_estud, Numero_matriculas, Id_Periodo)
+  values
+  (1, 'A', 'activo', '2024-09-16', 1, 19, 1),
+  (2, 'A', 'activo', '2024-09-16', 2, 19, 1),
+  (3, 'A', 'activo', '2024-09-16', 3, 19, 1),
+  (4, 'A', 'activo', '2024-09-16', 4, 19, 1),
+  (5, 'A', 'activo', '2024-09-16', 5, 19, 1);

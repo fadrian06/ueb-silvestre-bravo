@@ -2,10 +2,40 @@
  ☐ ¿El sistema Autoriza los usuarios (Inicia sesión según privilegio)
  ☐ ¿Permite Insertar registros a la base de datos desde los Módulos?
    ✔ Usuarios @done (24/01/2025 01:39:59)
+   ✔ Estudiantes @done (26/01/2025 17:24:26)
+   ✔ Representantes @done (26/01/2025 17:24:27)
+   ✔ Profesores @done (26/01/2025 17:24:28)
+   ✔ Períodos @done (26/01/2025 17:24:29)
+   ✔ Materias @done (26/01/2025 17:24:29)
+   ☐ Años y secciones
+   ☐ Calificaciones
  ☐ ¿El sistema permite Consultar datos registrados?
    ✔ Usuarios @done (24/01/2025 01:40:05)
+   ✔ Estudiantes @done (26/01/2025 17:24:26)
+   ✔ Representantes @done (26/01/2025 17:24:27)
+   ✔ Profesores @done (26/01/2025 17:24:28)
+   ✔ Períodos @done (26/01/2025 17:24:29)
+   ✔ Materias @done (26/01/2025 17:24:29)
+   ☐ Años y secciones
+   ☐ Calificaciones
  ☐ ¿En todos los Módulos se pueden Modificar los registros?
+   ✔ Usuarios @done (24/01/2025 01:39:59)
+   ✔ Estudiantes @done (26/01/2025 17:24:26)
+   ✔ Representantes @done (26/01/2025 17:24:27)
+   ✔ Profesores @done (26/01/2025 17:24:28)
+   ✔ Períodos @done (26/01/2025 17:24:29)
+   ✔ Materias @done (26/01/2025 17:24:29)
+   ☐ Años y secciones
+   ☐ Calificaciones
  ☐ ¿En todos los Módulos se pueden Eliminar los registros?
+   ✔ Usuarios @done (24/01/2025 01:39:59)
+   ✔ Estudiantes @done (26/01/2025 17:24:26)
+   ✔ Representantes @done (26/01/2025 17:24:27)
+   ✔ Profesores @done (26/01/2025 17:24:28)
+   ✔ Períodos @done (26/01/2025 17:24:29)
+   ✔ Materias @done (26/01/2025 17:24:29)
+   ☐ Años y secciones
+   ☐ Calificaciones
  ☐ ¿El sistema genera Reportes por pantalla y por Impresión?
  ✔ ¿El sistema permite Restaurar y Respaldar la Base de datos? @done (23/01/2025 23:48:34)
  ☐ ¿Los formularios validan los campos de entrada?
